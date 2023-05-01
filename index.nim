@@ -18,9 +18,9 @@ slide:
 slide:
   nbText: "### 👨‍👩‍👧 Me - Pietro Peterlongo"
   unorderedList:
-    listItem: nbText: "past: Math (Pisa, Trieste), Climate Science (Paris), Cryptography (Trento)"
-    listItem: nbText: "now: Data Science (Milan) at [ToolsGroup](https://www.toolsgroup.com): Supply Chain Planning Software"
-    listItem: nbText: "Python: started early 2000s, serious around 2015, this is my first presentation"  # when Dive Into Python was one of the best resources to start with
+    listItem: nbText: "**past**: Math (Pisa, Trieste), Climate Science (Paris), Cryptography (Trento)"
+    listItem: nbText: "**now** (since 2015): Data Science at [ToolsGroup](https://www.toolsgroup.com): Supply Chain Planning Software"
+    listItem: nbText: "**Python**: started early 2000s, serious around 2015, this is my first presentation"  # when Dive Into Python was one of the best resources to start with
     # 2015-2016, when starting a new project with Python 2(.7) was something still somewhat reasonable
     # amplifon python project in 2016!
     # there were some scientific libraries that still did not support python 3 I believe...

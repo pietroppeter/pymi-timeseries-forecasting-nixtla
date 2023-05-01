@@ -55,3 +55,4 @@
 - [x] start slides
   - [x] pick a (dark) theme: moon
   - [x] title slide
+- [x] me slide - first draft

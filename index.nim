@@ -10,7 +10,7 @@ showSlideNumber()
 footer("[github.com/pietroppeter/pymi-timeseries-forecasting-nixtla](https://github.com/pietroppeter/pymi-timeseries-forecasting-nixtla)")
 
 slide:
-  bigText: "Time Series Forecasting with [Nixtla](https://www.nixtla.io/)!"
+  bigText: "Time Series Forecasting and [Nixtla Ecosystem](https://www.nixtla.io/)!"
   nbText: "[Python Milano](https://milano.python.it/) meetup"
   nbText: "_Milan, May 18th 2023_"
   nbText: "Pietro Peterlongo" # add links to github, twitter, mastodon
@@ -20,9 +20,9 @@ slide:
   unorderedList:
     listItem: nbText: "**past**: Math (Pisa, Trieste), Climate Science (Paris), Cryptography (Trento)"
     listItem: nbText: "**now** (since 2015): Data Science at [ToolsGroup](https://www.toolsgroup.com): Supply Chain Planning Software"
-    listItem: nbText: "**Python**: started early 2000s, serious around 2015, this is my first presentation" 
+    listItem: nbText: "**Python**: started early 2000s, serious around 2015, my first presentation in... May 2023 ;)" 
     # started:
-    # - when Dive Into Python was one of the best resources to start with
+    # - when Dive Into Python (2000-2004) was one of the best resources to start with
     # - when matlab was far superior in a scientific context
     # 2015-2016:
     # - when starting a new project with Python 2(.7) was something still somewhat reasonable

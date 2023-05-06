@@ -21,13 +21,13 @@
     - metrics
   - list of timeseries libraries (R ecosystem, statsmodels, gluonts, sktime, darts, prophet, ... nixtla)
 - nixtla
-  - repo overview
+  - ecosystem overview
   - business: prediction at scale
   - statsforecast
   - hierarchical forecast
-  - tsfeatures
-  - mlforecast
-  - neuralforecast
+  - tsfeatures (maybe not)
+  - mlforecast (lightgbm? mention conformal prediction)
+  - neuralforecast (deepar?)
 - prophet and the zillow story? likely as a follow up slide
 - references
   - hyndman (IT!)
@@ -56,3 +56,21 @@
   - [x] pick a (dark) theme: moon
   - [x] title slide
 - [x] me slide - first draft
+
+## title, abstract, author
+
+title: Time Series Forecasting and Nixtla Ecosystem
+
+abstract:
+Predicting the future, or - as Data Scientist like to call it - Time Series Forecasting,
+is a time-honored activity where people get paid to be wrong.
+We will first review some of the basic concepts and methods for creating and evaluating predictions,
+then we will explore Nixtla's open source ecosystem:
+a recently released set of libraries providing state-of-the-art implementations for most classical and modern forecasting technologies
+(statistical, hierarchical, machine learning, neural)
+that has the potential to become the reference framework in the field.
+
+author:
+Pietro Peterlongo is a Data Scientist at ToolsGroup.
+Since the company sells software to forecast demand (and optimize inventory),
+he is supposed to be able to pretend to know about time series forecasting.

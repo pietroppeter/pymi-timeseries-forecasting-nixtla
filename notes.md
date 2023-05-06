@@ -56,6 +56,14 @@
   - [x] pick a (dark) theme: moon
   - [x] title slide
 - [x] me slide - first draft
+- [ ] code structure
+  - [x] myslides.nim: embrace nimconf22-nimib setup
+  - [x] refactor index into intro
+- [ ] nixtla slides
+  - [ ] nixtla overview
+    - [x] structure
+    - [ ] ecosystem overview
+    - [ ] history, business model, team
 
 ## title, abstract, author
 

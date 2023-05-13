@@ -56,18 +56,42 @@
   - [x] pick a (dark) theme: moon
   - [x] title slide
 - [x] me slide - first draft
+  - [ ] a bit more about ToolsGroup?
 - [ ] code structure
   - [x] myslides.nim: embrace nimconf22-nimib setup
   - [x] refactor index into intro
 - [x] python environment? kaggle notebooks!!!
+- [ ] "agenda" slide?
+- [ ] time series forecasting slides
+  - [ ] why
+    - [ ] demand forecast and inventory optimization
+  - [ ] basic concepts
+    - [ ] basic terms
+    - [ ] naive forecast
+    - [ ] decomposition
+    - [ ] stats models: Arima and Ets
+  - [ ] benchmarking and evaluation
+    - [ ] M competitions
+  - [ ] overview: other time series libraries
 - [ ] nixtla slides
   - [ ] nixtla overview
     - [x] structure
     - [ ] ecosystem overview
-    - [ ] history, business model, team
-    # strengths
+    - [ ] history, business model, team, strengths
   - [ ] nixta - statsforecast
+- [ ] ref slides
 - [ ] notebooks
+  - [x] Intro to NixtlaVerse (or Nixtla Ecosystem) - Part 1 - Basic API
+    - [ ] adjust title, summary and link to part 2
+  - [ ] Intro to NixtlaVerse - Part 2 - Making better forecasts
+
+nice to haves:
+- [ ] compare arima and ets on half passengers time series (to see multiplicative coefficients)
+- [ ] ask in nixtla
+  - why unique_ids as index and monthly forecast has end of month?
+  - will datasets become a repo by itself?
+  - will plot become not linked from stasforecast?
+- [ ] a thank you for listening slide with some p5nim art!
 
 ## title, abstract, author
 

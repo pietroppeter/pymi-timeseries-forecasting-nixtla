@@ -7,7 +7,7 @@
 - time series forecasting
   - why
   - use cases
-    - demand forecasting
+    - demand forecasting and inventory optimization
   - plot
     - with matplotlib/seaborn: passengers
     - with vegalite: weather
@@ -59,11 +59,15 @@
 - [ ] code structure
   - [x] myslides.nim: embrace nimconf22-nimib setup
   - [x] refactor index into intro
+- [x] python environment? kaggle notebooks!!!
 - [ ] nixtla slides
   - [ ] nixtla overview
     - [x] structure
     - [ ] ecosystem overview
     - [ ] history, business model, team
+    # strengths
+  - [ ] nixta - statsforecast
+- [ ] notebooks
 
 ## title, abstract, author
 

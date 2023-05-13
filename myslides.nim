@@ -12,12 +12,21 @@ template myInit*(sourceFileRel = "") =
     setSlidesTheme(Moon)
     useScrollWheel()
     showSlideNumber()
-    footer("[github.com/pietroppeter/pymi-timeseries-forecasting-nixtla](https://github.com/pietroppeter/pymi-timeseries-forecasting-nixtla)")
+    #footer("[github.com/pietroppeter/pymi-timeseries-forecasting-nixtla](https://github.com/pietroppeter/pymi-timeseries-forecasting-nixtla)")
   addStuff
 
 template useSource*(filename: string) =
   nb.source = read(filename.RelativeFile)
 
+template kaggleNotebook*(slug: string) =
+  nbRawHtml:
+    block:
+      let slug1 {. inject .} = slug
+      fmt"""<iframe src="https://www.kaggle.com/embed/{slug1}" height="600" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="nixtla - statsforecast - getting started"></iframe>"""
+
+template slideText*(text: string) =
+  slide:
+    nbText: text
 
 template addStuff* =
   nb.useLatex()

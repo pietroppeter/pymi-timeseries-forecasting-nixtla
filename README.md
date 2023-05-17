@@ -1,5 +1,7 @@
 # pymi-timeseries-forecasting-nixtla
-repo for presentation at Python Milano (May 2023) on timeseries forecasting with Nixtla
+
+repo for presentation at [Python Milano](https://milano.python.it/)
+(May, 18th 2023) on timeseries forecasting with [Nixtla](https://www.nixtla.io/).
 
 ## slides
 

@@ -1,4 +1,6 @@
 import nimib, nimiSlides, myslides
+import memes
+export memes
 
 template slideWhatIsTimeSeriesForecasting* =
   slide:
@@ -78,16 +80,173 @@ template slideHowToForecast* =
         listItem: nbText: "classical (ETS, ARIMA, ...)"
         listItem: nbText: "ml (random forest, LGBM, ...)"
         listItem: nbText: "neural (NBEATS, DeepAR, ...)"
+      listItem: nbText: "ensemble forecasting"
     speakerNote: """
 "bayesian" (prophet) could be a subclass of classical
 """
 
+template slideUncertainty* =
+  slide:
+    nbText: "### Dealing with Uncertainity"
+    nbImage("images/probability-distributions.png")
+    speakerNote: """
+- demand forecasting and inventory optimization
+- safety stock
+- demand planner ("paid to be wrong" quote) and supply planner
+- Millions of timeseries (SKU/Locations or Areas)
+"""
+
+template slideSupplyChain* =
+  slide:
+    nbText: "### Supply Chain"
+    nbImage("images/supply-chain-network-flows.png")
+
+template slideRefHyndman* =
+  slide:
+    nbText: "### FPP: Forecasting Principles and Practices"
+    columns:
+      column:
+        nbImage("images/fpp3_front_cover.jpg")
+      column:
+        nbRawHtml: "<br>"
+        nbText: """
+by **Rob J Hyndman** and George Athanasopoulos
+
+Monash University, Australia
+
+3rd edition, May 2021
+
+**free!** [otexts.com/fpp3/](https://otexts.com/fpp3/)
+
+**R-based**
+"""
+
+template slideOtherRefs* =
+  slideText: """### Other references
+
+- Youtube (+ Kaggle) course by Konrad Banchewicz (Feb 2022): [video 1](https://www.youtube.com/watch?v=kAI67Sz92-s&list=RDCMUCBPRJjIWfyNG4X-CRbnv78A&index=20), [kaggle 0](https://www.kaggle.com/code/konradb/ts-0-the-basics/notebook)
+- [Time Series Analytics and Forecasting](https://www.forecaster.guru/time-series-analytics-and-forecasting.html), Lectures by Lorenzo Nespoli (May 2023) 
+- [Demand Forecasting con Serie Temporali gerarchiche](https://open.spotify.com/episode/4RfNlSNsjdg2SgAeXhx9jt?si=868b049dce204ecc), intervista Pythonista Ep10 (Nov 2021)
+
+"""
+
+template slideRefPythonLibraries* =
+  slide:
+    nbText: """
+### Python Libraries for Timeseries
+
+[Hyndman's suggestions](https://robjhyndman.com/hyndsight/python_time_series.html)
+
+> The best Python implementations for my time series methods are available from [Nixtla](https://github.com/nixtla).
+
+- [statsmodels](https://www.statsmodels.org/stable/index.html)
+- [sktime](http://www.sktime.net/en/latest/)
+- [skforecast](https://github.com/JoaquinAmatRodrigo/skforecast)
+- [Darts](https://unit8co.github.io/darts/)
+- [Prophet](https://facebook.github.io/prophet/) (from Facebook)
+- [GluonTS](https://ts.gluon.ai/stable/) (from Amazon)
+- [Merlion](https://github.com/salesforce/Merlion) (from Salesforce)
+- ..., [awesome-time-series](https://github.com/lmmentel/awesome-time-series)
+"""
+
+template slideMethodology* =
+  slideText: """### Methodology
+1. think about your why
+2. gather data (process, explore)
+3. baseline
+4. measure
+5. improve
+6. restart from step 4 or less 
+"""
+
+template slideBaseline* =
+  slideText: """## Baseline
+- Historical average
+- Naive (aka persistence in weather forecasting)
+- Moving Average
+- Seasonal Naive
+- ..., existing forecast (benchmark)
+"""
+
+template slideMetrics* =
+  slide:
+    nbText: "### Metrics"
+    columns:
+      column:
+        myImage "metrics_forecasts_plot.png"
+        nbText: """
+1. low
+2. median
+3. average
+"""
+        nbTextSmall "from [Forecast KPIs: RMSE, MAE, MAPE & Bias](https://towardsdatascience.com/forecast-kpi-rmse-mae-mape-bias-cdc5703d242d)"
+
+      column:
+        nbText: """
+
+$$
+  \text{MAPE} = \frac{1}{N} \Sigma \frac{\left| e_t \right|}{d_t}
+$$ 
+
+$$
+  \text{MAE} = \frac{1}{N} \Sigma \left| e_t \right|
+$$ 
+
+$$
+  \text{RMSE} = \sqrt{\frac{1}{N} \Sigma e_t^2}
+$$ 
+
+"""
+        myImage "metrics_results_table.png"
+
+template slideBacktesting* =
+  slide:
+    nbText: "### Cross Validation (aka Backtesting)"
+    myImage "ChainedWindows.gif"
+
+template slideDecomposition* =
+  slide:
+    #nbText: "### Decomposition"
+    myImage "emplstl-1.png"
+
+template slideETS* =
+  slide:
+    nbText: "### ETS (Error, Trend, Seasonal)"
+    myImage "statespacemodels-1.png"
+    nbText: "AutoETS performs automatic model selection"
+
+template slidesWhy* =
+  slide:
+    sectionSlide "Why Forecasting?"
+    slideWhatIsTimeSeriesForecasting
+    slideDomainsOfTimeSeriesForecasting
+    slideHowToForecast
+    slideUncertainty
+    slideSupplyChain
+
+template slidesCrashCourse* =
+  slide:
+    sectionSlide "A Crash Course"
+    slideMethodology
+    slideBaseline
+    slideMetrics
+    slideBacktesting
+    slideDecomposition
+    slideETS
+
+template slidesRefs* =
+  slide:
+    sectionSlide "References"
+    slideRefHyndman
+    slideOtherRefs
+    slideRefPythonLibraries
+    slideMemeChaplin
+    slideMemeReturn
+
+
 when isMainModule:
   myInit("timeseries.nim")
-  # what is time series forecasting?
-  #  - what is a time series
-  #  example of confirmed participants at recent Python Milano events
-  #slideWhatIsTimeSeriesForecasting
-  #slideDomainsOfTimeSeriesForecasting
-  slideHowToForecast
+  slidesWhy
+  slidesCrashCourse
+  slidesRefs
   nbSave

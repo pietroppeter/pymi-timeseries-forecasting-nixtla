@@ -4,8 +4,6 @@ template slideNixtlaArticles* =
   slide:
     nbText: "todo"
 
-
-
 template slideHyndmanFPP3* =
   slide:
     nbText: "todo"

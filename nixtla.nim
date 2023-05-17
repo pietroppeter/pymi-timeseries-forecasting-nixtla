@@ -1,21 +1,22 @@
 import nimib, nimiSlides, myslides
 
-template slidesNixtlaOverview* =
+template slideNixtlaOpenSourceEcosystem* =
   slide:
-    bigText: "Nixtla Ecosystem Overview"
+    nbImage("images/nixtla-homepage-offering.PNG")
     # which are the libraries provided and which we will go through
-
-  slide:
-    bigText: "Nixtla Story"
-    # team, brief history, business model
-    # story through tweets!
 
 template slideWhyNixtla* =
   slideText: """
-Why Nixtla?
+### Why Nixtla?
+
 - open source
 - api
 - performance
+- vision
+
+**Risks**: moving fast, iterating on business model
+"""
+#[
 - modern python (type hints, nbdev)
 - algorithms (classical, ml, neural)
 - probabilistic (classical, conformal)
@@ -23,10 +24,9 @@ Why Nixtla?
 - forecasting pipelines
 - scale
 - breadth (hierarchical, tsfeatures)
-- vision
 - emojis
 - endorsements
-"""
+]#
 # meme python vs R, python point of view: https://twitter.com/Jiminy_Kirket/status/1429867059333287941
 # meme python vs R, R point of view: https://twitter.com/ChelseaParlett/status/1461173106081296388
 # very competent implementations!
@@ -62,9 +62,19 @@ Why Nixtla?
 # 2023:
 # Feb 22: new release of mlforecast with conformal prediction: https://twitter.com/nixtlainc/status/1628141883514912793?s=20
 # May 11: published Data Council talk on hierarchical forecasting: https://www.youtube.com/watch?v=lotzOJuwxYs&list=PLAesBe-zAQmF-GpvZ3ba5YpVzoVbgzl8M&index=21
+
+#[
+  - youtube video with team (Jul 22): https://youtu.be/i7JNt5qN2Sg?t=35
+  - hierarchical forecasting (May 23): https://www.youtube.com/watch?v=lotzOJuwxYs&list=PLAesBe-zAQmF-GpvZ3ba5YpVzoVbgzl8M&index=22
+]#
+
 template slideNotebookStatsForecastQuickstart* =
   slide:
     kaggleNotebook("pietroppeter/nixtla-statsforecast-quickstart")
+
+template slideNotebookStatsForecastMore* =
+  slide:
+    kaggleNotebook("pietroppeter/nixtla2again")
 
 template slideMlForecastApi* =
   slide:
@@ -84,15 +94,71 @@ mlf = MLForecast(
         12: [(rolling_mean, 24)],
     )
 )
-mlf.fit(df)
-forecast_df = mlf.predict(12)
 """
+    nbText: "A declarative feature engineering pipeline!"
 
-# could add a tweetroll: first tweet by Nixtla, tweet by Sean Taylor, ...
+template slideMlForecastApiPredict* =
+  slide:
+    pyAnimateCode(""): hlPy"""
+mlf.fit(df)
+forecast_df = mlf.predict(12, levels=[90])
+"""
+    myImage "hierarchical-predict-bad-quality.png"
+
+template tweetPipeline* =
+  slideTweet """<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Hi! At nixtla, we have just launched our MVP: Open Source Forecasting Pipeline. We want to democratize access to state-of-the-art forecasting models. Feedback and comments are welcome! <a href="https://t.co/1y7ttPYNgy">https://t.co/1y7ttPYNgy</a></p>&mdash; fede garza (they/them) (@fede_gr) <a href="https://twitter.com/fede_gr/status/1449091329837965318?ref_src=twsrc%5Etfw">October 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>"""
+
+template tweetStatsRelease* =
+  slideTweet """<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">I&#39;m thrilled to announce that we&#39;re releasing the fastest <a href="https://twitter.com/hashtag/autoarima?src=hash&amp;ref_src=twsrc%5Etfw">#autoarima</a> implementation for <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> today! 😍<br><br>It is a mirror implementation of <a href="https://twitter.com/robjhyndman?ref_src=twsrc%5Etfw">@robjhyndman</a>&#39;s <a href="https://twitter.com/hashtag/autoarima?src=hash&amp;ref_src=twsrc%5Etfw">#autoarima</a> (R) and it is optimized using <a href="https://twitter.com/numba_jit?ref_src=twsrc%5Etfw">@numba_jit</a>. It is 20x faster than pmdarima and <a href="https://twitter.com/MetaAI?ref_src=twsrc%5Etfw">@MetaAI</a>&#39;s Prophet. 😎<br><br>🧵<a href="https://twitter.com/nixtlainc?ref_src=twsrc%5Etfw">@nixtlainc</a></p>&mdash; fede garza (they/them) (@fede_gr) <a href="https://twitter.com/fede_gr/status/1496256854674001925?ref_src=twsrc%5Etfw">February 22, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>"""
+
+template tweetFastWithRay* =
+  slideTweet """<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Forecast 1M time series in 30 minutes. <a href="https://twitter.com/nixtlainc?ref_src=twsrc%5Etfw">@nixtlainc</a> + <a href="https://twitter.com/raydistributed?ref_src=twsrc%5Etfw">@raydistributed</a> + <a href="https://twitter.com/numba_jit?ref_src=twsrc%5Etfw">@numba_jit</a> = 🤩 🚀 ⚡<br><br>Recently, we launched the fastest version of <a href="https://twitter.com/hashtag/AutoARIMA?src=hash&amp;ref_src=twsrc%5Etfw">#AutoARIMA</a> for <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a>. Now you can scale your computation horizontally for millions of time series, leveraging the power of <a href="https://twitter.com/raydistributed?ref_src=twsrc%5Etfw">@raydistributed</a> <a href="https://t.co/zkfBL0FYJ4">pic.twitter.com/zkfBL0FYJ4</a></p>&mdash; fede garza (they/them) (@fede_gr) <a href="https://twitter.com/fede_gr/status/1521500565406167042?ref_src=twsrc%5Etfw">May 3, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>"""
+
+template tweetHierarchicalRelease* =
+  slideTweet """<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">🎉Today at <a href="https://twitter.com/nixtlainc?ref_src=twsrc%5Etfw">@nixtlainc</a>, we are excited to release our new 👑HierarchicalForecast library. 🔥<br><br>You can simply reconcile forecasts for hierarchical problems using statistical approaches such as Bottom Up, Top Down, Middle Out, Minimum Trace, and ERM. <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> <a href="https://twitter.com/hashtag/Forecasting?src=hash&amp;ref_src=twsrc%5Etfw">#Forecasting</a></p>&mdash; fede garza (they/them) (@fede_gr) <a href="https://twitter.com/fede_gr/status/1551980414788669441?ref_src=twsrc%5Etfw">July 26, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>"""
+
+template tweetConformalRelease* =
+  slideTweet """<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">🎉 We are thrilled to announce the release of the latest version of mlforecast a <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> library for Scalable <a href="https://twitter.com/hashtag/machinelearning?src=hash&amp;ref_src=twsrc%5Etfw">#machinelearning</a> 🤖 for <a href="https://twitter.com/hashtag/timeseries?src=hash&amp;ref_src=twsrc%5Etfw">#timeseries</a> <a href="https://twitter.com/hashtag/forecasting?src=hash&amp;ref_src=twsrc%5Etfw">#forecasting</a><br><br>🚀 This version comes with exciting new features that are sure to make forecasting even more efficient and accurate<br><br>🧵 <a href="https://t.co/UR7wM0DTUJ">pic.twitter.com/UR7wM0DTUJ</a></p>&mdash; nixtla (@nixtlainc) <a href="https://twitter.com/nixtlainc/status/1628141883514912793?ref_src=twsrc%5Etfw">February 21, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>"""
+
+template videoDeepLearning* =
+  slideYoutube """<iframe width="800" height="400" src="https://www.youtube.com/embed/i7JNt5qN2Sg?start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>"""
+
+template videoNeuralBridge* =
+  slideYoutube """"""
+
+template videoHierarchical* =
+  slideYoutube """<iframe width="800" height="400" src="https://www.youtube.com/embed/lotzOJuwxYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>"""
+
+template slideTeam* =
+  slide:
+    nbText: "### Team"
+    myImage "nixtla-team.png"
+
+template slidesNixtlaVerse* =
+  slide:
+    sectionSlide "Nixtlaverse"
+    slideNixtlaOpenSourceEcosystem
+    slideNotebookStatsForecastQuickstart
+    slideNotebookStatsForecastMore
+    slideMlForecastApi
+    slideMlForecastApiPredict
+
+template slidesNixtlaStory* =
+  slide:
+    sectionSlide "Nixtla Story"
+    tweetPipeline
+    tweetStatsRelease
+    tweetFastWithRay
+    tweetHierarchicalRelease
+    tweetConformalRelease
+    videoDeepLearning
+    #videoNeuralBridge
+    videoHierarchical
+    slideTeam
+    slideWhyNixtla
+
 when isMainModule:
   myInit("nixtla.nim")
-  #slidesNixtlaOverview
-  #slideWhyNixtla
-  #slideNotebookStatsForecastQuickstart
-  slideMlForecastApi
+  #slidesNixtlaStory
+  slidesNixtlaVerse
   nbSave

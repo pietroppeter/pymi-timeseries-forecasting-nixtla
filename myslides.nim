@@ -11,7 +11,7 @@ template myInit*(sourceFileRel = "") =
     nbInit(theme = revealTheme, thisFileRel=sourceFileRel)
     setSlidesTheme(Moon)
     useScrollWheel()
-    showSlideNumber()
+    #showSlideNumber()
     #footer("[github.com/pietroppeter/pymi-timeseries-forecasting-nixtla](https://github.com/pietroppeter/pymi-timeseries-forecasting-nixtla)")
   addStuff
 
@@ -27,6 +27,9 @@ template kaggleNotebook*(slug: string) =
 template slideText*(text: string) =
   slide:
     nbText: text
+
+template sectionSlide*(title: string) =
+  slideText: "## " & title
 
 template pyAnimateCode*(highlightLines: string, pyCode: string) =
   newNbSlimBlock("pyAnimateCode"):
@@ -48,8 +51,25 @@ template addStuff* =
   # addBigButtons
   # optionalInitPython
 
+template emptyColumn* =
+  column: nbText: ""
+
+template myImage*(filename: string) =
+  nbImage("images/" & filename)
 
 # small text
 template addNbTextSmall* =
   nb.partials["nbTextSmall"] = "<small>" & nb.partials["nbText"] & "</small>"
   nb.renderPlans["nbTextSmall"] = nb.renderPlans["nbText"]
+
+template nbTextSmall*(text: string) =
+  nbText: text
+  nb.blk.command = "nbTextSmall"
+
+template slideTweet*(embedCode: string) =
+  slide:
+    nbRawHtml: embedCode
+
+template slideYoutube*(embedCode: string) =
+  slide:
+    nbRawHtml: embedCode

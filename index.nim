@@ -1,11 +1,19 @@
 import nimib, nimislides, myslides
-import intro, nixtla
+import intro, timeseries, nixtla, thankyou
 
 when isMainModule:
   myInit("index.nim")
   useSource("intro.nim")
-  slideTitle
-  slideMe
+  slide:
+    slideTitle
+    slideMe
+  useSource("timeseries.nim")
+  slidesWhy
+  slidesCrashCourse
+  slidesRefs
   useSource("nixtla.nim")
-  slidesNixtlaOverview
+  slidesNixtlaStory
+  slidesNixtlaVerse
+  useSource("thankyou.nim")
+  thankyouSlide
   nbSave

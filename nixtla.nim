@@ -85,7 +85,7 @@ mlf = MLForecast(
     )
 )
 mlf.fit(df)
-mlf.predict(12)
+forecast_df = mlf.predict(12)
 """
 
 # could add a tweetroll: first tweet by Nixtla, tweet by Sean Taylor, ...

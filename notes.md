@@ -63,12 +63,16 @@
 - [x] python environment? kaggle notebooks!!!
 - [ ] "agenda" slide?
 - [ ] time series forecasting slides
-  - [ ] why
-    - [ ] demand forecast and inventory optimization
+  - [ ] generic intro
+    - [x] what is
+    - [x] domains
+    - [ ] how to (methods)
+    - [ ] dealing with uncertainity
+    - [ ] focus case supply chain: demand forecast and inventory optimization
   - [ ] basic concepts
     - [ ] basic terms
     - [ ] naive forecast
-    - [ ] decomposition
+    - [ ] decomposition (additive and multiplicative)
     - [ ] stats models: Arima and Ets
   - [ ] benchmarking and evaluation
     - [ ] M competitions
@@ -84,14 +88,35 @@
   - [x] Intro to NixtlaVerse (or Nixtla Ecosystem) - Part 1 - Basic API
     - [ ] adjust title, summary and link to part 2
   - [ ] Intro to NixtlaVerse - Part 2 - Making better forecasts
+    - [x] prep notebook 1: strategy to reduce M5 datasets
+    - [ ] data + exploration: load M5, extract subset + basic exploration
+      - use tsfeatures and datasetsforecast
+    - [ ] cross validate AutoArima vs ETS (vs Naive)
+    - [ ] exogenous variables
+      - [ ] AutoArimaX
+      - [ ] mlforecast
+        - [ ] which features/strategy?
+      - [ ] add to evaluation
+    - [ ] hierarchical forecast (and add to evaluation)
+    - [ ] add neural forecast?
 
 nice to haves:
+- [ ] how to have bigger plots? (esp height)
 - [ ] compare arima and ets on half passengers time series (to see multiplicative coefficients)
 - [ ] ask in nixtla
   - why unique_ids as index and monthly forecast has end of month?
   - will datasets become a repo by itself?
   - will plot become not linked from stasforecast?
-- [ ] a thank you for listening slide with some p5nim art!
+  - why blog posts not accessible from home page?
+  - unclear how exogenous stuff plot was produced
+- [ ] corrections for Nixtla
+  - signature of datasetsforecast.m5.M5 static dataset has not ds in columns: https://github.com/Nixtla/datasetsforecast/blob/main/nbs/m5.ipynb
+  - StatsForecast.plot messes u y axis if it has an additional categorical column!
+  - StatsForecast.plot does not allow to plot more than 8? cannot plot 10?
+  - Method section in hierarchicalforecast lib is empty
+- [ ] a streamlit app to explore data and forecasts (of M5 competition and others)
+- [ ] a "thank you for listening slide" with some p5nim art!
+  - https://openprocessing.org/sketch/1240159
 
 ## title, abstract, author
 

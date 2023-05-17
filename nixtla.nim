@@ -8,6 +8,7 @@ template slidesNixtlaOverview* =
   slide:
     bigText: "Nixtla Story"
     # team, brief history, business model
+    # story through tweets!
 
 template slideWhyNixtla* =
   slideText: """
@@ -26,6 +27,7 @@ Why Nixtla?
 - emojis
 - endorsements
 """
+# they actually made available for python something that was R unique, see: https://twitter.com/ChelseaParlett/status/1461173106081296388
 # very competent implementations!
 
 # risks:

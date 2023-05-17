@@ -28,9 +28,18 @@ template slideText*(text: string) =
   slide:
     nbText: text
 
+template pyAnimateCode*(highlightLines: string, pyCode: string) =
+  newNbSlimBlock("pyAnimateCode"):
+    nb.blk.context["highlightLines"] = highlightLines
+    nb.blk.context["pyCode"] = pyCode
+
+template addPyAnimateCode* = 
+  nb.partials["pyAnimateCode"] = "<pre style=\"width: 100%\"><code class=\"python hljs\" data-noescape data-line-numbers=\"{{&highlightLines}}\">{{&pyCode}}</code></pre>\n"
+
 template addStuff* =
   nb.useLatex()
   addNbTextSmall
+  addPyAnimateCode
   # addNbCodeDontRun
   # addNewAnimateCodeBlocks
   # addNimibCodeBlocks

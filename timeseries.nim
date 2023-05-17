@@ -67,11 +67,27 @@ template slideDomainsOfTimeSeriesForecasting* =
   - how much to buy, produce, stock and where?
 """
 
+template slideHowToForecast* =
+  slide:
+    nbText: "### How to forecast"
+    unorderedList:
+      listItem: nbText: "equations with $t$ (ODEs, PDEs, ...)"
+      listItem: nbText: "judgmental forecasts"
+      listItem: nbText: "statistical forecasting"
+      unorderedList:
+        listItem: nbText: "classical (ETS, ARIMA, ...)"
+        listItem: nbText: "ml (random forest, LGBM, ...)"
+        listItem: nbText: "neural (NBEATS, DeepAR, ...)"
+    speakerNote: """
+"bayesian" (prophet) could be a subclass of classical
+"""
+
 when isMainModule:
   myInit("timeseries.nim")
   # what is time series forecasting?
   #  - what is a time series
   #  example of confirmed participants at recent Python Milano events
   #slideWhatIsTimeSeriesForecasting
-  slideDomainsOfTimeSeriesForecasting
+  #slideDomainsOfTimeSeriesForecasting
+  slideHowToForecast
   nbSave

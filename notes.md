@@ -66,7 +66,7 @@
   - [ ] generic intro
     - [x] what is
     - [x] domains
-    - [ ] how to (methods)
+    - [x] how to (methods)
     - [ ] dealing with uncertainity
     - [ ] focus case supply chain: demand forecast and inventory optimization
   - [ ] basic concepts

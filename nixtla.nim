@@ -66,10 +66,33 @@ template slideNotebookStatsForecastQuickstart* =
   slide:
     kaggleNotebook("pietroppeter/nixtla-statsforecast-quickstart")
 
+template slideMlForecast* =
+  slide:
+    pyAnimateCode(""): hlPy"""
+import lightgbm as lgbm
+from mlforecast import MLForecast
+from window_ops.expanding import expanding_mean
+from window_ops.rolling import rolling_mean
+
+mlf = MLForecast(
+    models = [lgbm.LGBMRegressor()], # list of models
+    freq = 'MS', # frequency of time series: month start
+    differences=[12], # differences to apply to target
+    lags=[1, 12], # lags to use as feature
+    lag_transforms=( # lag transformation to apply to specific lags
+        1: [expanding_mean],
+        12: [(rolling_mean, 24)],
+    )
+)
+mlf.fit(df)
+mlf.predict(12)
+"""
+
 # could add a tweetroll: first tweet by Nixtla, tweet by Sean Taylor, ...
 when isMainModule:
   myInit("nixtla.nim")
   #slidesNixtlaOverview
-  slideWhyNixtla
-  slideNotebookStatsForecastQuickstart
+  #slideWhyNixtla
+  #slideNotebookStatsForecastQuickstart
+  slideMlForecast
   nbSave

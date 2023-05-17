@@ -83,6 +83,8 @@
     - [ ] ecosystem overview
     - [ ] history, business model, team, strengths
   - [ ] nixta - statsforecast
+  - [ ] nixta - mlforecast
+    - [x] basic api
 - [ ] ref slides
 - [ ] notebooks
   - [x] Intro to NixtlaVerse (or Nixtla Ecosystem) - Part 1 - Basic API

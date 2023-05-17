@@ -66,7 +66,7 @@ template slideNotebookStatsForecastQuickstart* =
   slide:
     kaggleNotebook("pietroppeter/nixtla-statsforecast-quickstart")
 
-template slideMlForecast* =
+template slideMlForecastApi* =
   slide:
     pyAnimateCode(""): hlPy"""
 import lightgbm as lgbm
@@ -94,5 +94,5 @@ when isMainModule:
   #slidesNixtlaOverview
   #slideWhyNixtla
   #slideNotebookStatsForecastQuickstart
-  slideMlForecast
+  slideMlForecastApi
   nbSave

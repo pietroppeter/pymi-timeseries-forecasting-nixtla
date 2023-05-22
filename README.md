@@ -3,7 +3,8 @@
 repo for presentation at [Python Milano](https://milano.python.it/)
 (May, 18th 2023) on timeseries forecasting with [Nixtla](https://www.nixtla.io/).
 
-Video: https://www.youtube.com/watch?v=CMHvdabYEm8&t=247s
+- Slides: https://pietroppeter.github.io/pymi-timeseries-forecasting-nixtla/
+- Video: https://www.youtube.com/watch?v=CMHvdabYEm8&t=247s
 
 ## slides
 
